@@ -1,7 +1,9 @@
 package com.rafaelcosta.diariodeclasse.data
 
+import androidx.annotation.DrawableRes
+
 data class Aluno(
     val nome: String,
-    val foto: Int,
+    @DrawableRes val foto: Int,
     val curso: String,
 )
