@@ -1,6 +1,8 @@
 package com.rafaelcosta.diariodeclasse
 
+import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -59,8 +61,12 @@ import com.rafaelcosta.diariodeclasse.data.DataSource
 import com.rafaelcosta.diariodeclasse.ui.theme.DiarioDeClasseTheme
 
 class MainActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        val TAG = "MainActivity"
         super.onCreate(savedInstanceState)
+        Log.e(TAG, "onCreate Called")
+
         enableEdgeToEdge()
         setContent {
             DiarioDeClasseTheme {
@@ -78,6 +84,31 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.e(TAG, "onPause Called")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.e(TAG, "onResume Called")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.e(TAG, "onRestart Called")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.e(TAG, "onStop Called")
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.e(TAG, "onStart Called")
     }
 }
 
@@ -252,4 +283,6 @@ fun DiarioDeClassePreview(){
         }
     }
 }
+
+
 
